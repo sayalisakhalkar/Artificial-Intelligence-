@@ -1,0 +1,45 @@
+- edit grading-agent.pl and modify the refdir value to point to the absolute path to the "reference" directory
+
+- type:
+
+./grading_agent.pl /home/scf-34/sakhalka/cs561-f14/laurent
+
+1. 
+
+Kindly consider this test case. In the following case, the output posted in the discussion forum is :
+
+2
+A
+F
+7
+A
+B
+C
+D
+E
+F
+G
+0 2 0 0 10 0 0
+2 0 2 0 0 0 0
+0 2 0 2 0 0 0
+0 0 2 4 4 0 0
+10 0 0 4 0 6 2
+0 0 0 0 6 0 2
+0 0 0 0 2 2 0
+
+DFS:-
+A-B-C-D-E-D-F
+A-E-F
+16
+
+
+#MY OUTPUT IS:
+
+Log: A-B-C-D-E-F
+Path: A-E-F
+Cost: 16
+
+As per my algorithm, I am traversing the nodes and once they are being traversed and explored , that is, marked visited and appended 
+to the path then if the node in the path comes again while traversing (even if of lesser cost) then it is not considered. Its visited
+status is false. So, as per my algorithm, it is not visited again. I am assuming that the DFS algorithm does not always give an optimal
+path.
